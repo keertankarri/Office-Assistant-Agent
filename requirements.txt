@@ -1,11 +1,12 @@
 streamlit
 langchain
-langchain-community
 langchain-google-genai
+langchain-community
+langchain-text-splitters
 chromadb
-pytesseract
-pillow
 pypdf
 python-dotenv
 pandas
-fpdf
+pysqlite3-binary
+pytesseract
+Pillow

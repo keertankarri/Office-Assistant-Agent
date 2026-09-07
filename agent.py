@@ -72,7 +72,14 @@ def handle_user_request(user_prompt: str, emp_id: str = "EMP101", ocr_text: str 
         Extract and summarize key details (dates, monetary amounts, or medical notes).
         """
         response = llm.invoke(prompt)
-        return str(response.content)
+        
+        # Robustly extract the text whether it's a string or a list of dictionaries
+        if isinstance(response.content, str):
+            return response.content
+        elif isinstance(response.content, list):
+            return "".join([part.get("text", "") if isinstance(part, dict) else str(part) for part in response.content])
+        else:
+            return str(response.content)
 
     router_prompt = f"""
     Classify the user prompt into EXACTLY ONE tag:
