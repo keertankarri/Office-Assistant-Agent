@@ -1,5 +1,5 @@
 import json
-import sqlite3
+import sqlite3 #import sqlite3 for database operations
 import os
 from dotenv import load_dotenv
 
@@ -122,7 +122,7 @@ def handle_user_request(user_prompt: str, emp_id: str = "EMP101", ocr_text: str 
         Context:
         {context}
         
-        Question: {user_prompt}
+        Question: {user_prompt} 
         """
         response = llm.invoke(synthesis_prompt)
         
