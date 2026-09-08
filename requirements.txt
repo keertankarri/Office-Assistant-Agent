@@ -8,5 +8,4 @@ pypdf
 python-dotenv
 pandas
 pysqlite3-binary
-pytesseract
 Pillow
